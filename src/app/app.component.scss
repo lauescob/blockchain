@@ -1,0 +1,132 @@
+header {
+    background-color: #535352;
+    color: white;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-family: 'CIBFont Sans', sans-serif;
+    padding: 10px;
+    justify-content: flex-end;
+
+}
+
+.blockchain {
+    margin: 50px;
+    &__info {
+        width: 80%;
+        margin: auto;
+
+        &-definition {
+            margin: 10px auto 50px auto;
+            font-size: 18px;
+            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            text-align: justify;
+        }
+
+        &-title {
+            text-align: center;
+            font-family: 'CIBFont Sans', sans-serif;
+        }
+    }
+
+    &__controls {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-end {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        &-input {
+            display: block;
+            width: 20%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        &-input:focus {
+            outline: none;
+            border-color: #95b2d2;
+        }
+
+    }
+
+    &__controls input {
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+
+    &__controls .button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #CCEFF8;
+        color: #2C2A29;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    &__controls .button:active {
+        background-color: #95b2d2;
+    }
+
+    &__controls .button:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px #95b2d2;
+    }
+
+    &__blocks {
+        overflow-x: auto;
+        white-space: nowrap;
+        margin: 40px auto 20px auto;
+
+        &-container {
+            display: inline-flex;
+        }
+
+        &-block {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 10px;
+
+            &-item {
+                text-align: center;
+            }
+
+            p {
+                margin: 5px 0;
+            }
+        }
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #CCEFF8;
+    color: #2C2A29;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#deleteButton {
+    background-color: #cf6e6e;
+    color: #fff;
+}
+
+#saveButton{
+    background-color: #FEF4BB;
+}
