@@ -79,12 +79,16 @@ export class AppComponent {
     if (this.blockchain.length > 0) {
       const lastIndex = this.blockchain.length - 1;
       const blockToUpdate = this.blockchain[lastIndex];
-      blockToUpdate.data = this.newData;
-      blockToUpdate.timestamp = Date.now();
-      blockToUpdate.hash = this.calculateHash(blockToUpdate);
-      console.log('El usuario ha actualizado el último bloque', { block: blockToUpdate });
-      this.logAction('updateBlock', { block: blockToUpdate });
-      this.saveBlockchain();
+      if (lastIndex !== 0) { // Evitar la actualización del primer bloque
+        blockToUpdate.data = this.newData;
+        blockToUpdate.timestamp = Date.now();
+        blockToUpdate.hash = this.calculateHash(blockToUpdate);
+        console.log('El usuario ha actualizado el último bloque', { block: blockToUpdate });
+        this.logAction('updateBlock', { block: blockToUpdate });
+        this.saveBlockchain();
+      } else {
+        console.log('No se puede actualizar el primer bloque');
+      }
     }
     this.newData = '';
   }
