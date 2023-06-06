@@ -76,7 +76,6 @@ export class AppComponent {
   }
 
   updateData(): void {
-    if (this.blockchain.length > 0) {
       const lastIndex = this.blockchain.length - 1;
       const blockToUpdate = this.blockchain[lastIndex];
         blockToUpdate.data = this.newData;
@@ -85,8 +84,7 @@ export class AppComponent {
         console.log('El usuario ha actualizado el último bloque', { block: blockToUpdate });
         this.logAction('updateBlock', { block: blockToUpdate });
         this.saveBlockchain();
-      } 
-    this.newData = '';
+        this.newData = '';
   }
 
   resetBlockchain(): void {
